@@ -16,7 +16,7 @@ namespace Lab4.Controllers
 
         public IActionResult Index()
         {
-            var time = DateTime.Now;
+            DateTime time = DateTime.Now;
 
             return View(time);
         }
