@@ -1,0 +1,47 @@
+﻿<style>
+    h1 {
+        font-weight: bold;
+        background-color: rebeccapurple;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+    }
+</style>
+@model int
+@{
+    ViewData["Title"] = "Page2";
+}
+
+<h1>Page2 - Random Data</h1>
+<h4>Select the number of profiles to display:</h4>
+<a href="/Lab4/Page2/1" class="btn btn-sm btn-info">1</a>
+<a href="/Lab4/Page2/2" class="btn btn-sm btn-info">2</a>
+<a href="/Lab4/Page2/3" class="btn btn-sm btn-info">3</a>
+<a href="/Lab4/Page2/4" class="btn btn-sm btn-info">4</a>
+<a href="/Lab4/Page2/5" class="btn btn-sm btn-info">5</a>
+
+<link rel="stylesheet" href="~/css/site.css">
+@for (int i = 1; i < Model + 1; i++)
+{
+<div class="card">
+    <h3 class="card-header">
+        Profile @i
+    </h3>
+    <div class="card-body">
+        <p>
+            <strong>Name: </strong>
+            @LoremNET.Lorem.Words(2)
+        </p>
+        <p>
+            <strong>Email: </strong>
+            @LoremNET.Lorem.Email()
+        </p>
+        <p>
+            <strong>Bio:</strong>
+            @LoremNET.Lorem.Paragraph(20, 5)
+        </p>
+    </div>
+</div>  
+}
+<div class="spacing"><a href="/Lab4/Page3" class="btn btn-success btn-lg">Go to Page 3</a></div>
+

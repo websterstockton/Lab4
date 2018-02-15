@@ -1,0 +1,36 @@
+﻿<style>
+    h1 {
+        font-weight: bold;
+        background-color: rebeccapurple;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+    }
+</style>
+@model System.DateTime
+@{
+    ViewData["Title"] = "Index";
+    int day, hour;
+    string greeting = "";
+    day = @Model.DayOfYear;
+    day = 365 - day;
+    hour = @Model.Hour;
+    if (hour >=  18)
+        greeting = "Good Evening!";
+    else if (hour >= 12)
+        greeting = "Good Afternoon!";
+    else
+        greeting = "Good Morning!";
+
+
+}
+
+<h1>@greeting</h1>
+<div>
+    <h3>The time is @Model.ToString("hh:mm tt") on @Model.ToString("dddd, MMMM dd, yyyy")</h3>
+    <h4>There are @day more days in @Model.Year</h4>
+
+    <a href="/Lab4/Page2" class="btn btn-success btn-lg">Go to Page 2</a>
+</div>
+
+
