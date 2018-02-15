@@ -8,6 +8,11 @@ namespace Lab4.Controllers
 {
     public class Lab4Controller : Controller
     {
+        string[] bevNames = { "Coffee", "Tea", "Coke", "Beer", "Wine", "Whiskey" };
+        public Lab4Controller()
+        {
+
+        }
 
         public IActionResult Index()
         {
@@ -26,7 +31,8 @@ namespace Lab4.Controllers
 
         public IActionResult Page3()
         {
-            return View();
+            ViewData["Title"] = "Beverages";
+            return View(bevNames);
         }
     }
 }
